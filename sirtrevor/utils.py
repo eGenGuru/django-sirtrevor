@@ -1,7 +1,8 @@
-from PIL import Image
+from functools import partial
 from io import BytesIO
+
+from PIL import Image
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.utils.functional import curry
 
 
 def resize_image_attachment(file_, size=(1024, 9999)):
@@ -17,4 +18,4 @@ def resize_image_attachment(file_, size=(1024, 9999)):
 
 
 def resize_image_attachment_processor(w, h):
-    return curry(resize_image_attachment, size=(w,h))
+    return partial(resize_image_attachment, size=(w, h))

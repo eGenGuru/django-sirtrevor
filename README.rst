@@ -21,7 +21,7 @@ Quick start
 
 3. Add sir trevor urls::
 
-    url(r'^sirtrevor/', include('sirtrevor.urls')),
+    path('sirtrevor/', include('sirtrevor.urls')),
 
 4. Create a model that makes use of ``SirTrevorField``::
 
